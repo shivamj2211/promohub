@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Pages - Your Influencer Marketing hub
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div></title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="filters.html">Filters</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+        <h1>Your Influencer Marketing hub
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div></h1>
+    </header>
+
+    <section>
+        <h2>Explore Pages</h2>
+        <!-- Display a list of pages with details -->
+        <!-- You can dynamically generate this content based on the pages in your database -->
+        <div class="page-list">
+            <div class="page">
+                <h3>Instagram Page</h3>
+                <p>Username: @example_instagram</p>
+                <p>Followers: 1,000,000</p>
+                <p>ROI: 5%</p>
+            </div>
+            <div class="page">
+                <h3>Facebook Page</h3>
+                <p>Username: Example Facebook Page</p>
+                <p>Followers: 500,000</p>
+                <p>ROI: 8%</p>
+            </div>
+            <!-- Add more pages as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Influencer Marketing hub</p>
+    </footer>
+ <!-- JavaScript for Search Functionality -->
+    <script>
+        function search() {
+            // Get the search input value
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Perform search logic (you need to customize this based on your data structure)
+            // For now, just show an alert with the search term
+            alert('Searching for: ' + searchTerm);
+        }
+    </script>
+</body>
+
+
+</html>

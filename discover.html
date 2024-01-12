@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Your Influencer Marketing hub</title>
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <h1>Your Influencer Marketing hub </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="filters.html">Filters</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+        
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </header>
+
+    <section>
+        <h2>Discover Influencers and Top Pages</h2>
+
+        <div class="options">
+            <div class="option">
+                <h3>For Influencers</h3>
+                <p>Add your content and connect your Instagram, Facebook, or YouTube page.</p>
+                <a href="add_content.html" class="btn">Add Content</a>
+            </div>
+
+            <div class="option">
+                <h3>For Customers</h3>
+                <p>Explore top pages with high followers and ROI for your business promotion.</p>
+                <a href="explore_pages.html" class="btn">Explore Pages</a>
+            </div>
+        </div>
+
+        <div class="top-pages">
+            <h3>Top Pages</h3>
+            <!-- Add content about selected top pages with followers, ROI, etc. -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Influencer Marketing hub
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div></p>
+    </footer>
+    <script>
+        // JavaScript to toggle "active" class on navigation links
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll('nav a');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+ <!-- JavaScript for Search Functionality -->
+    <script>
+        function search() {
+            // Get the search input value
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Perform search logic (you need to customize this based on your data structure)
+            // For now, just show an alert with the search term
+            alert('Searching for: ' + searchTerm);
+        }
+    </script>
+</body>
+
+
+</html>

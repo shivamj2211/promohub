@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Content - Your Influencer Marketing hub
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div></title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="filters.html">Filters</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+        <h1>Your Influencer Marketing hub
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div></h1>
+    </header>
+
+    <section>
+        <span class="content-title">Add Content</span>
+        <form action="submit_influencer.php" method="post">
+            <!-- Basic Influencer Information -->
+            <label for="influencerName">Influencer Name:</label>
+            <input type="text" id="influencerName" name="influencerName" required>
+
+            <label for="influencerEmail">Email:</label>
+            <input type="email" id="influencerEmail" name="influencerEmail" required>
+
+             <label for="location">Location:</label>
+            <select id="location" name="location"></select>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+
+            <!-- Social Media Handles -->
+            <label for="platformType">Platform Type:</label>
+            <select id="platformType" name="platformType">
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="youtube">YouTube</option>
+            </select>
+
+            <label for="pageUsername">Page Username:</label>
+            <input type="text" id="pageUsername" name="pageUsername" required>
+
+            <label for="niche">Niche or Category:</label>
+            <input type="text" id="niche" name="niche">
+
+            <label for="followers">Number of Followers:</label>
+            <input type="number" id="followers" name="followers">
+
+            <!-- Content Information -->
+            <label for="contentType">Type of Content Offered:</label>
+            <input type="text" id="contentType" name="contentType">
+
+            <label for="postFrequency">Frequency of Posting:</label>
+            <input type="text" id="postFrequency" name="postFrequency">
+
+            <label for="collaborationPreferences">Collaboration Preferences:</label>
+            <input type="text" id="collaborationPreferences" name="collaborationPreferences">
+
+            <label for="contentDemographics">Content Demographics:</label>
+            <textarea id="contentDemographics" name="contentDemographics"></textarea>
+
+            <!-- Collaboration Terms -->
+            <label for="feeStructure">Fee Structure:</label>
+            <input type="text" id="feeStructure" name="feeStructure">
+
+            <label for="paymentMethod">Payment Method Preferences:</label>
+            <input type="text" id="paymentMethod" name="paymentMethod">
+
+            <label for="contractDuration">Contract Duration:</label>
+            <input type="text" id="contractDuration" name="contractDuration">
+
+            <label for="exclusivityTerms">Exclusivity Terms:</label>
+            <input type="text" id="exclusivityTerms" name="exclusivityTerms">
+
+            <!-- Influencer Background -->
+            <label for="influencerBio">Influencer's Bio:</label>
+            <textarea id="influencerBio" name="influencerBio"></textarea>
+
+            <label for="achievements">Achievements or Recognitions:</label>
+            <textarea id="achievements" name="achievements"></textarea>
+
+            <label for="previousCollaborations">Previous Collaborations:</label>
+            <textarea id="previousCollaborations" name="previousCollaborations"></textarea>
+
+            <!-- Additional Requirements -->
+            <label for="specialRequests">Any Special Requests or Preferences:</label>
+            <textarea id="specialRequests" name="specialRequests"></textarea>
+
+            <label for="availability">Availability for Meetings or Discussions:</label>
+            <input type="text" id="availability" name="availability">
+
+            <!-- Upload Media Kit and Samples -->
+            <label for="mediaKit">Upload Media Kit (if available):</label>
+            <input type="file" id="mediaKit" name="mediaKit">
+
+            <label for="previousSamples">Examples of Previous Collaborations:</label>
+            <input type="file" id="previousSamples" name="previousSamples">
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Influencer Marketing hub
+<!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div></p>
+    </footer>
+    <script>
+        // Sample data for cities, states, and countries
+        const cities = ['City1', 'City2', 'City3'];
+        const states = ['State1', 'State2', 'State3'];
+        const countries = ['Country1', 'Country2', 'Country3'];
+
+        // Function to populate dropdown options
+        function populateDropdown(elementId, options) {
+            const dropdown = document.getElementById(elementId);
+            dropdown.innerHTML = ""; // Clear existing options
+
+            options.forEach(option => {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.textContent = option;
+                dropdown.appendChild(optionElement);
+            });
+        }
+
+        // Populate location dropdowns
+        populateDropdown('location', cities);
+
+        // Event listener for platform type change
+        document.getElementById('platformType').addEventListener('change', function () {
+            const selectedPlatform = this.value;
+
+            // Example: Change options based on the selected platform
+            switch (selectedPlatform) {
+                case 'instagram':
+                    populateDropdown('location', cities);
+                    break;
+                case 'facebook':
+                    populateDropdown('location', states);
+                    break;
+                case 'youtube':
+                    populateDropdown('location', countries);
+                    break;
+                default:
+                    populateDropdown('location', []);
+                    break;
+            }
+        });
+    </script>
+ <!-- JavaScript for Search Functionality -->
+    <script>
+        function search() {
+            // Get the search input value
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Perform search logic (you need to customize this based on your data structure)
+            // For now, just show an alert with the search term
+            alert('Searching for: ' + searchTerm);
+        }
+    </script>
+</body>
+
+
+</html>

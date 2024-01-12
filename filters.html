@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters - Your Influencer Marketing App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <h1>Your Influencer Marketing App</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="filters.html" class="active">Filters</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+       
+    </header>
+
+    <!-- Inside the <section> tag in filters.html -->
+<section>
+    <h2>Filters</h2>
+
+    <div class="filter-options">
+        <h3>Genre</h3>
+        <select id="genreFilter">
+            <option value="all">All Genres</option>
+            <option value="fashion">Fashion</option>
+            <option value="fitness">Fitness</option>
+            <option value="technology">Technology</option>
+            <!-- Add more genres as needed -->
+        </select>
+    </div>
+
+    <div class="filter-options">
+        <h3>Follower Count</h3>
+        <label for="minFollowers">Min:</label>
+        <input type="number" id="minFollowers" placeholder="0">
+
+        <label for="maxFollowers">Max:</label>
+        <input type="number" id="maxFollowers" placeholder="1000000">
+    </div>
+
+    <div class="filter-options">
+        <h3>ROI (%)</h3>
+        <label for="minRoi">Min:</label>
+        <input type="number" id="minRoi" placeholder="0">
+
+        <label for="maxRoi">Max:</label>
+        <input type="number" id="maxRoi" placeholder="100">
+    </div>
+
+    <div class="filter-options">
+        <h3>Genuine Followers</h3>
+        <select id="genuineFollowersFilter">
+            <option value="all">All</option>
+            <option value="70">More than 70%</option>
+            <option value="80">More than 80%</option>
+            <option value="90">More than 90%</option>
+        </select>
+    </div>
+
+    <div class="filter-options">
+        <h3>Location</h3>
+        <select id="locationFilter">
+            <option value="all">All Locations</option>
+            <option value="City1">City 1</option>
+            <option value="City2">City 2</option>
+            <!-- Add more locations as needed -->
+        </select>
+    </div>
+    <!-- Inside the <section> tag in filters.html -->
+<div class="filter-options">
+    <h3>Engagement Rate (%)</h3>
+    <label for="minEngagement">Min:</label>
+    <input type="number" id="minEngagement" placeholder="0">
+
+    <label for="maxEngagement">Max:</label>
+    <input type="number" id="maxEngagement" placeholder="10">
+</div>
+
+
+    <button onclick="applyFilters()">Apply Filters</button>
+    <button onclick="clearFilters()">Clear Filters</button>
+
+    <h2>Results</h2>
+    <div id="filteredResults">
+        <p>Apply filters to see results.</p>
+    </div>
+    
+</section>
+
+
+    <footer>
+        <p>&copy; 2023 Your Influencer Marketing App</p>
+    </footer>
+
+    <!-- JavaScript for Filter Functionality -->
+    <!-- Inside the <script> tag in filters.html -->
+<script src="/js/filters.js"></script>
+    <!-- Inside the <script> tag in filters.html -->
+
+
+</body>
+
+</html>

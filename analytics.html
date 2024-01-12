@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Your Influencer Marketing App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Link to Chart.js library -->
+</head>
+
+<body>
+    <header>
+        <h1>Your Influencer Marketing App</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="filters.html">Filters</a></li>
+                <li><a href="analytics.html" class="active">Analytics</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section>
+        <h2>Analytics</h2>
+
+        <div class="analytics-content">
+            <div class="analytics-summary">
+                <h3>Summary</h3>
+                <p>Total Influencers: 500</p>
+                <p>Total Users: 1000</p>
+                <p>Top Performing Genre: Fashion</p>
+            </div>
+
+            <div class="analytics-chart">
+                <h3>Influencer Distribution by Genre</h3>
+                <canvas id="genreChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Influencer Marketing App</p>
+    </footer>
+
+    <!-- JavaScript for Chart.js -->
+    <script>
+        // Sample data for the chart
+        var genreData = {
+            labels: ['Fashion', 'Fitness', 'Technology', 'Travel', 'Food'],
+            datasets: [{
+                label: 'Number of Influencers',
+                data: [150, 100, 80, 50, 120],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Create the chart
+        var ctx = document.getElementById('genreChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: genreData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres - Your Influencer Marketing App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <h1>Your Influencer Marketing App</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="genres.html" class="active">Genres</a></li>
+                <li><a href="filters.html">Filters</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+        
+         <!-- Search Bar -->
+         <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </header>
+
+    <section>
+        <h2>Genres</h2>
+
+        <div class="genre">
+            <h3>Fashion</h3>
+            <p>Explore influencers who specialize in fashion and style. From clothing hauls to trend reviews, find the latest in the fashion world.</p>
+            <!-- You can add more details or links specific to the Fashion genre -->
+        </div>
+
+        <div class="genre">
+            <h3>Fitness</h3>
+            <p>Discover fitness influencers who share workout routines, healthy recipes, and wellness tips. Connect with influencers passionate about a healthy lifestyle.</p>
+            <!-- You can add more details or links specific to the Fitness genre -->
+        </div>
+
+        <div class="genre">
+            <h3>Technology</h3>
+            <p>Connect with tech enthusiasts who review gadgets, discuss the latest in tech trends, and provide insights into the world of technology.</p>
+            <!-- You can add more details or links specific to the Technology genre -->
+        </div>
+
+        <!-- Add more genres as needed -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Influencer Marketing App</p>
+    </footer>
+ <!-- JavaScript for Search Functionality -->
+    <script>
+        function search() {
+            // Get the search input value
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Perform search logic (you need to customize this based on your data structure)
+            // For now, just show an alert with the search term
+            alert('Searching for: ' + searchTerm);
+        }
+    </script>
+</body>
+
+
+</html>

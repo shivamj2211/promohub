@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Link to Chart.js library -->
+    <!-- Add your CSS link or include styles here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        #priceContainer {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+        }
+        #priceBreakdown {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+        }
+
+        #priceBreakdown h3 {
+            margin-bottom: 10px;
+        }
+
+        #priceBreakdown ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #priceBreakdown li {
+            margin-bottom: 5px;
+        }
+        .optional-services {
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .optional-services label {
+            display: block;
+            margin-top: 5px;
+        }
+
+        #targetOptions {
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #targetOptions label {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Your Influencer Marketing App</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="filters.html">Filters</a></li>
+                <li><a href="analytics.html" >Analytics</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <h1>Get Pricing Information</h1>
+
+    <form id="pricingForm">
+        <label for="budget">Budget:</label>
+        <input type="number" id="budget" name="budget" placeholder="Enter your budget" required>
+
+        <label for="genre">Preferred Genre:</label>
+        <select id="genre" name="genre">
+            <option value="fashion">Fashion</option>
+            <option value="fitness">Fitness</option>
+            <option value="technology">Technology</option>
+            <!-- Add more genres as needed -->
+        </select>
+
+        <label for="audienceSize">Target Audience Size:</label>
+        <input type="number" id="audienceSize" name="audienceSize" placeholder="Enter target audience size" required>
+
+        <button type="button" onclick="submitForm()">Get Pricing</button>
+    </form>
+
+    <div id="priceContainer">
+        <h2>Pricing Information</h2>
+        <p id="priceMessage"></p>
+    </div>
+    <div id="priceBreakdown">
+        <h3>Pricing Breakdown</h3>
+        <ul id="breakdownList"></ul>
+    </div>
+    <div id="priceBreakdown">
+        <h3>Pricing Breakdown</h3>
+        <ul id="breakdownList"></ul>
+    </div>
+
+    <div class="optional-services">
+        <h3>Optional Services</h3>
+        <label for="featuredPost">
+            <input type="checkbox" id="featuredPost" name="featuredPost"> Featured Post (+ $50)
+        </label>
+        <label for="analyticsReport">
+            <input type="checkbox" id="analyticsReport" name="analyticsReport"> Analytics Report (+ $30)
+        </label>
+    </div>
+
+    <div id="targetOptions">
+        <h3>Target Audience Options</h3>
+        <label for="ageGroup">Age Group:</label>
+        <select id="ageGroup" name="ageGroup">
+            <option value="all">All</option>
+            <option value="18-24">18-24</option>
+            <option value="25-34">25-34</option>
+            <option value="35-44">35-44</option>
+            <option value="45+">45+</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter target location">
+
+        <label for="interests">Interests:</label>
+        <input type="text" id="interests" name="interests" placeholder="Enter target interests">
+    </div>
+
+
+    <script>
+         function submitForm() {
+            var budget = parseInt(document.getElementById("budget").value);
+            var audienceSize = parseInt(document.getElementById("audienceSize").value);
+
+            // Replace this logic with your actual backend logic for calculating pricing
+            var priceDetails = calculatePrice(budget, audienceSize);
+
+            // Display the pricing information
+            displayPrice(priceDetails);
+        }
+
+        function calculatePrice(budget, audienceSize) {
+            // This is a simple example, replace with your actual pricing logic
+            var basePrice = 100; // Replace with your base price
+            var pricePerFollower = 0.1; // Replace with your price per follower
+
+            var totalPrice = basePrice + pricePerFollower * audienceSize;
+
+            var breakdown = {
+                basePrice: basePrice.toFixed(2),
+                pricePerFollower: (pricePerFollower * audienceSize).toFixed(2),
+                totalPrice: totalPrice > budget ? "Price exceeds budget" : totalPrice.toFixed(2)
+            };
+
+            return breakdown;
+        }
+
+        function displayPrice(priceDetails) {
+            var priceContainer = document.getElementById("priceContainer");
+            var priceMessage = document.getElementById("priceMessage");
+            var priceBreakdown = document.getElementById("priceBreakdown");
+            var breakdownList = document.getElementById("breakdownList");
+
+            if (priceDetails.totalPrice === "Price exceeds budget") {
+                priceMessage.textContent = "Sorry, the price exceeds your budget.";
+                priceContainer.style.display = "none";
+                priceBreakdown.style.display = "none";
+            } else {
+                priceMessage.textContent = "The estimated price for your campaign is $" + priceDetails.totalPrice;
+
+                // Display the pricing breakdown
+                breakdownList.innerHTML = "";
+                for (var key in priceDetails) {
+                    if (key !== "totalPrice") {
+                        var listItem = document.createElement("li");
+                        listItem.textContent = key.charAt(0).toUpperCase() + key.slice(1) + ": $" + priceDetails[key];
+                        breakdownList.appendChild(listItem);
+                    }
+                }
+
+                priceContainer.style.display = "block";
+                priceBreakdown.style.display = "block";
+            }
+        }
+        function submitForm() {
+            var budget = parseInt(document.getElementById("budget").value);
+            var audienceSize = parseInt(document.getElementById("audienceSize").value);
+
+            // Calculate base price and price per follower
+            var basePrice = 100; // Replace with your base price
+            var pricePerFollower = 0.1; // Replace with your price per follower
+            var totalPrice = basePrice + pricePerFollower * audienceSize;
+
+            // Add optional services cost
+            if (document.getElementById("featuredPost").checked) {
+                totalPrice += 50;
+            }
+
+            if (document.getElementById("analyticsReport").checked) {
+                totalPrice += 30;
+            }
+
+            var breakdown = {
+                basePrice: basePrice.toFixed(2),
+                pricePerFollower: (pricePerFollower * audienceSize).toFixed(2),
+                totalPrice: totalPrice.toFixed(2)
+            };
+
+            // Display the pricing information and breakdown
+            displayPrice(breakdown);
+        }
+        function submitForm() {
+            var budget = parseInt(document.getElementById("budget").value);
+            var audienceSize = parseInt(document.getElementById("audienceSize").value);
+
+            // Replace this logic with your actual backend logic for calculating pricing
+            var price = calculatePrice(budget, audienceSize);
+
+            // Display the pricing information
+            displayPrice(price);
+        }
+
+        function calculatePrice(budget, audienceSize) {
+            // This is a simple example, replace with your actual pricing logic
+            var basePrice = 100; // Replace with your base price
+            var pricePerFollower = 0.1; // Replace with your price per follower
+
+            var totalPrice = basePrice + pricePerFollower * audienceSize;
+
+            return totalPrice > budget ? "Price exceeds budget" : totalPrice.toFixed(2);
+        }
+
+        function displayPrice(price) {
+            var priceContainer = document.getElementById("priceContainer");
+            var priceMessage = document.getElementById("priceMessage");
+
+            if (price === "Price exceeds budget") {
+                priceMessage.textContent = "Sorry, the price exceeds your budget.";
+            } else {
+                priceMessage.textContent = "The estimated price for your campaign is $" + price;
+            }
+
+            priceContainer.style.display = "block";
+        }
+    </script>
+</body>
+</html>

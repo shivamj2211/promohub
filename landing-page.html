@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoHub Sign In</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 50px 0;
+        }
+
+        .login-main {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .content-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>PromoHub Sign In</h1>
+    </header>
+
+    <nav>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <main>
+        <div class="login-main">
+            <div class="container" onclick="location.href='#'">
+                <div class="content-center">
+                    <div class="content-title">I am a Marketer</div>
+                    <p>I use the platform to manage Creator content</p>
+                </div>
+            </div>
+
+            <div class="container" onclick="location.href='#'">
+                <div class="content-center">
+                    <div class="content-title">I am a Creator</div>
+                    <p>I use the platform to create content for TapInfluence</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 PromoHub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
